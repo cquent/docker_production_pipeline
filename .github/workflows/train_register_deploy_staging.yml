@@ -34,8 +34,7 @@ jobs:
         env: 
           ACCURACY_THRESHOLD: "0.90" 
         run: | 
-          echo '${{ steps.train.outputs.result_json }}' | python 
-          ml/evaluate.py 
+          echo '${{ steps.train.outputs.result_json }}' | python ml/evaluate.py 
   deploy_staging: 
     needs: train_register 
     runs-on: ubuntu-latest 
